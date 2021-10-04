@@ -59,11 +59,11 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.dss_matiari"
+            applicationId "edu.aku.hassannaqvi.uen_kmc_ps"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
-            minSdkVersion 22
-            targetSdkVersion 22
+            minSdkVersion 21
+            targetSdkVersion 21
         }
 
         applicationVariants.all { variant ->
