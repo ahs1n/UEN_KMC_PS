@@ -32,6 +32,8 @@
             android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.sections.SectionAActivity"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
+
         <activity
             android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -41,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.SyncActivity" />
 
         <activity
