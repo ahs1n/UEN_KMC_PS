@@ -62,8 +62,8 @@ android {
             applicationId "edu.aku.hassannaqvi.dss_matiari"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
-            minSdkVersion 29
-            targetSdkVersion 30
+            minSdkVersion 22
+            targetSdkVersion 22
         }
 
         applicationVariants.all { variant ->
