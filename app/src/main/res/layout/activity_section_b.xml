@@ -7,11 +7,11 @@
 
         <variable
             name="mwra"
-            type="edu.aku.hassannaqvi.dss_matiari.models.MWRA" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.models.MWRA" />
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.dss_matiari.ui.sections.SectionBActivity" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.ui.sections.SectionBActivity" />
     </data>
 
     <LinearLayout

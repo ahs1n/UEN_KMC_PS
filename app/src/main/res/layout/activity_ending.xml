@@ -7,11 +7,11 @@
 
         <variable
             name="household"
-            type="edu.aku.hassannaqvi.dss_matiari.models.Households" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.models.Households" />
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.dss_matiari.ui.EndingActivity" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.ui.EndingActivity" />
     </data>
 
     <LinearLayout

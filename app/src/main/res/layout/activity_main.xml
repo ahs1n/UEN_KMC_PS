@@ -8,11 +8,11 @@
 
         <variable
             name="mainapp"
-            type="edu.aku.hassannaqvi.dss_matiari.core.MainApp" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.core.MainApp" />
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.dss_matiari.ui.MainActivity" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.ui.MainActivity" />
     </data>
 
     <LinearLayout

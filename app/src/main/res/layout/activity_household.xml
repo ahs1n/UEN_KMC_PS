@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.dss_matiari.ui.lists.HouseholdActivity" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.ui.lists.HouseholdActivity" />
     </data>
 
     <LinearLayout

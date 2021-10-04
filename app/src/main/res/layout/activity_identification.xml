@@ -9,7 +9,7 @@
             type="edu.aku.hassannaqvi.dssmwsr.models.Households" />-->
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.dss_matiari.ui.sections.IdentificationActivity" />
+            type="edu.aku.hassannaqvi.uen_kmc_ps.ui.sections.IdentificationActivity" />
     </data>
 
     <LinearLayout
