@@ -61,6 +61,7 @@
     <string name="ra03">CHW Name </string>
     <string name="ra05">Team leader name </string>
     <string name="ra07">Village</string>
+    <string name="ra0701">Tehsil</string>
     <string name="ra06">Union council </string>
     <string name="ra08">Mohalla</string>
     <string name="ra09">Household Number</string>
@@ -135,6 +136,7 @@
     <string name='Q_ra05' translatable="false">ra06</string>
     <string name='Q_ra06' translatable="false">ra07</string>
     <string name='Q_ra07' translatable="false">ra08</string>
+    <string name='Q_ra0701' translatable="false">ra0801</string>
     <string name='Q_ra08' translatable="false">ra09</string>
     <string name='Q_ra09' translatable="false">ra10</string>
     <string name='Q_ra10' translatable="false">ra10</string>
