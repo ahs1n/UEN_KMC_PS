@@ -37,6 +37,8 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> ucCodes;
     private ArrayList<String> villageNames;
     private ArrayList<String> villageCodes;
+    private ArrayList<String> tehsilNames;
+    private ArrayList<String> tehsilCodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +145,7 @@ public class IdentificationActivity extends AppCompatActivity {
                     villageCodes.add(ucCodes.get(position) + "002");
                     villageCodes.add(ucCodes.get(position) + "003");
                 }
+
                 // Apply the adapter to the spinner
                 bi.ra07.setAdapter(new ArrayAdapter(IdentificationActivity.this, R.layout.custom_spinner, villageNames));
 
@@ -158,13 +161,68 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                //   bi.ra08.setText(null);
+                /*//   bi.ra08.setText(null);
                 // bi.ra09.setText(null);
                 bi.ra10.setText(null);
                 if (position != 0) {
                     String vCode = villageCodes.get(bi.ra07.getSelectedItemPosition());
 
                     int maxHHno = db.getMaxStructure(vCode) + 1;
+                    bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                    bi.btnContinue.setEnabled(true);
+           *//*     bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                bi.checkHousehold.setEnabled(true);*//*
+                    //  bi.ra08.setEnabled(false);
+                    //bi.ra09.setEnabled(false);
+                    bi.ra10.setText(String.valueOf(maxHHno));
+                    if (position == 0) return;
+                    // bi.ra08.setEnabled(true);
+                    // bi.ra09.setEnabled(true);
+                    bi.ra10.setEnabled(true);
+
+                }*/
+
+
+                if (position == 0) return;
+                Collection<Villages> tehsil = db.getTehsilByUc(ucCodes.get(position));
+                tehsilNames = new ArrayList<>();
+                tehsilCodes = new ArrayList<>();
+                tehsilNames.add("...");
+                tehsilCodes.add("...");
+
+                for (Villages v : tehsil) {
+                    tehsilNames.add(v.getVillagename());
+                    tehsilCodes.add(v.getVillagecode());
+                }
+                if (MainApp.user.getUserName().contains("test") || MainApp.user.getUserName().contains("dmu")) {
+
+                    tehsilNames.add("Test Tehsil 1 " + ucNames.get(position));
+                    tehsilNames.add("Test Tehsil 2 " + ucNames.get(position));
+                    tehsilNames.add("Test Tehsil 3 " + ucNames.get(position));
+                    tehsilCodes.add(ucCodes.get(position) + "001");
+                    tehsilCodes.add(ucCodes.get(position) + "002");
+                    tehsilCodes.add(ucCodes.get(position) + "003");
+                }
+                // Apply the adapter to the spinner
+                bi.ra0701.setAdapter(new ArrayAdapter(IdentificationActivity.this, R.layout.custom_spinner, tehsilNames));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        bi.ra0701.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                //   bi.ra08.setText(null);
+                // bi.ra09.setText(null);
+                bi.ra10.setText(null);
+                if (position != 0) {
+                    String tCode = tehsilCodes.get(bi.ra0701.getSelectedItemPosition());
+
+                    int maxHHno = db.getMaxStructure(tCode) + 1;
                     bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                     bi.btnContinue.setEnabled(true);
            /*     bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
@@ -178,14 +236,11 @@ public class IdentificationActivity extends AppCompatActivity {
                     bi.ra10.setEnabled(true);
 
                 }
-
-
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-
         });
 
     }

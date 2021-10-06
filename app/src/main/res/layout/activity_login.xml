@@ -190,6 +190,7 @@
                                     android:radius="2dp">
 
                                     <androidx.appcompat.widget.AppCompatSpinner
+                                        android:visibility="gone"
                                         android:id="@+id/teamleader"
                                         style="@style/spinnerStyle"
                                         android:layout_width="match_parent"

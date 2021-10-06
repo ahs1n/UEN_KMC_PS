@@ -77,6 +77,8 @@ object CreateTable {
             + TableVillage.COLUMN_UCNAME + " TEXT,"
             + TableVillage.COLUMN_VILLAGE_NAME + " TEXT,"
             + TableVillage.COLUMN_VILLAGE_CODE + " TEXT,"
+            + TableVillage.COLUMN_TEHSIL_NAME + " TEXT,"
+            + TableVillage.COLUMN_TEHSIL_CODE + " TEXT,"
             + TableVillage.COLUMN_UC_CODE + " TEXT" + " );")
 
 

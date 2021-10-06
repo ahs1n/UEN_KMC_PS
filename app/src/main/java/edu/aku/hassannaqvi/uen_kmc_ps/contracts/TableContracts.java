@@ -117,6 +117,8 @@ public class TableContracts {
         public static final String COLUMN_VILLAGE_NAME = "villagename";
         public static final String COLUMN_VILLAGE_CODE = "villagecode";
         public static final String COLUMN_UC_CODE = "uccode";
+        public static final String COLUMN_TEHSIL_NAME = "tehsilname";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilcode";
 
         //public static final String SERVER_URI = "villages.php";
 
@@ -135,4 +137,16 @@ public class TableContracts {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }*/
     }
+
+/*    public static abstract class TableTehsil implements BaseColumns {
+
+        public static final String TABLE_NAME = "tehsil";
+
+        public static final String _ID = "id";
+        public static final String COLUMN_UCNAME = "ucname";
+        public static final String COLUMN_VILLAGE_CODE = "villagecode";
+        public static final String COLUMN_UC_CODE = "uccode";
+        public static final String COLUMN_TEHSIL_NAME = "tehsilname";
+        public static final String COLUMN_TEHSIL_CODE = "tehsilcode";
+    }*/
 }

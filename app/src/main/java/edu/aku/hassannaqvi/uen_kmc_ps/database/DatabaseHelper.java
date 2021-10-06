@@ -833,6 +833,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allVil;
     }
 
+    public Collection<Villages> getTehsilByUc(String ucCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                TableVillage.COLUMN_TEHSIL_NAME,
+                TableVillage.COLUMN_TEHSIL_CODE
+        };
+
+        String whereClause = TableVillage.COLUMN_UC_CODE + "=?";
+        String[] whereArgs = new String[]{ucCode};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                TableVillage.COLUMN_TEHSIL_NAME + " ASC";
+
+        Collection<Villages> allVil = new ArrayList<Villages>();
+        try {
+            c = db.query(
+                    TableVillage.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Villages vil = new Villages();
+                allVil.add(vil.HydrateVil(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allVil;
+    }
+
     public List<String> getLMS(int age, int gender, String catA, String catB) {
         SQLiteDatabase db = this.getReadableDatabase();
         Log.d(TAG, "getLMS: " + age + " | " + gender + " | " + catA + " | " + catB);

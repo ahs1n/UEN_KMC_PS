@@ -166,7 +166,90 @@
 
                         </LinearLayout>
 
+
                         <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/rb04d" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/rb04m" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/rb04y" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/rb04d"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={mwra.rb04d}"
+                                app:defaultValue="98"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/rb04m"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={mwra.rb04m}"
+                                app:defaultValue="98"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/rb04y"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:onTextChanged="@{callback::ageInYears}"
+                                android:text="@={mwra.rb04y}"
+                                app:defaultValue="9998"
+                                app:maxValue="2006"
+                                app:minValue="1972"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">

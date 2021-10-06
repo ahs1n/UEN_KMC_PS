@@ -63,6 +63,9 @@ public class MWRA extends BaseObservable implements Observable {
     private String rb02 = "";
     private String rb03 = "";
     private String rb04 = "";
+    private String rb04d = "";
+    private String rb04m = "";
+    private String rb04y = "";
     private String rb05 = "";
     private String rb06 = "";
     private String rb07 = "";
@@ -296,6 +299,36 @@ public class MWRA extends BaseObservable implements Observable {
         this.rb04 = rb04;
         setRb05(this.rb04.equals("98") ? "" : this.rb05);
         notifyChange(BR.rb04);
+    }
+
+    @Bindable
+    public String getRb04d() {
+        return rb04d;
+    }
+
+    public void setRb04d(String rb04d) {
+        this.rb04d = rb04d;
+        notifyChange(BR.rb04d);
+    }
+
+    @Bindable
+    public String getRb04m() {
+        return rb04m;
+    }
+
+    public void setRb04m(String rb04m) {
+        this.rb04m = rb04m;
+        notifyChange(BR.rb04m);
+    }
+
+    @Bindable
+    public String getRb04y() {
+        return rb04y;
+    }
+
+    public void setRb04y(String rb04y) {
+        this.rb04y = rb04y;
+        notifyChange(BR.rb04y);
     }
 
     @Bindable

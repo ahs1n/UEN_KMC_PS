@@ -1151,10 +1151,8 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/ra18"
-                            style="@style/labelsHead"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:enabled="false"
                             android:gravity="center"
                             android:hint="##"
                             android:inputType="number"
@@ -1163,7 +1161,9 @@
                             app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

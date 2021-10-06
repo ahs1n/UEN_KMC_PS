@@ -8,6 +8,7 @@ import static edu.aku.hassannaqvi.uen_kmc_ps.core.MainApp.sharedPref;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -78,6 +79,23 @@ public class SectionBActivity extends AppCompatActivity {
         setDateRanges();
 
 
+    }
+
+    public void ageInYears(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.rb04y.getText())) return;
+        bi.rb05.setText("");
+        bi.rb05.setEnabled(true);
+
+        if (i == 0) return;
+
+        int dobYear = Integer.parseInt(s.toString());
+        int curYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        if (dobYear > (curYear - 99) && dobYear < curYear) {
+            String ageInYears = String.valueOf(curYear - dobYear);
+            bi.rb05.setText(ageInYears);
+            bi.rb05.setEnabled(false);
+        }
     }
 
     private void setDateRanges() {

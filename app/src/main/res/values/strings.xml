@@ -86,13 +86,13 @@
     <string name="ra16">Unique Family Number</string>
     <string name="ra17">Family Members</string>
     <string name="ra17_a">0 to 04 Years</string>
-    <string name="ra17_b">05 to 17 Years</string>
-    <string name="a17_c">18 to 49 Years </string>
+    <string name="ra17_b">05 to 14 Years</string>
+    <string name="a17_c">15 to 49 Years </string>
     <string name="ra17_d">&gt;49 Years</string>
 
-    <string name="ra18">No. of Women aged 18 – 49 years</string>
+    <string name="ra18">No. of Married Women aged between 15-49</string>
     <string name="ra19">Caste</string>
-    <string name="ra20">Does this household have women aged 18–49 years?</string>
+    <string name="ra20">Does this household have women aged 15–49 years?</string>
     <string name="ra20_a">Yes</string>
     <string name="ra20_b">No</string>
     <string name="rb_uc">Union council </string>
@@ -106,6 +106,9 @@
     <string name="rb03h">Husband Name</string>
     <string name="rb03f">Father Name</string>
     <string name="rb04">Date of Birth</string>
+    <string name="rb04d">Day</string>
+    <string name="rb04m">Month</string>
+    <string name="rb04y">Year</string>
     <string name="rb04_info">DD/MM/YYYY Use 98/98/9998 if not known</string>
     <string name="rb05">Age in years</string>
     <string name="rb06">Marital Status</string>

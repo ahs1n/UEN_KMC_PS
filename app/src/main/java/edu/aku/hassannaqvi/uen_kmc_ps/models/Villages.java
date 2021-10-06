@@ -18,6 +18,8 @@ public class Villages {
     String villagename;
     String villagecode;
     String uccode;
+    String tehsilname;
+    String tehsilcode;
 
     public Villages() {
         // Default Constructor
@@ -68,6 +70,22 @@ public class Villages {
         this.uccode = uccode;
     }
 
+    public String getTehsilname() {
+        return tehsilname;
+    }
+
+    public void setTehsilname(String tehsilname) {
+        this.tehsilname = tehsilname;
+    }
+
+    public String getTehsilcode() {
+        return tehsilcode;
+    }
+
+    public void setTehsilcode(String tehsilcode) {
+        this.tehsilcode = tehsilcode;
+    }
+
 
     public JSONObject toJSONObject() {
 
@@ -78,6 +96,8 @@ public class Villages {
             json.put(TableVillage.COLUMN_VILLAGE_NAME, this.villagename == null ? JSONObject.NULL : this.villagename);
             json.put(TableVillage.COLUMN_VILLAGE_CODE, this.villagecode == null ? JSONObject.NULL : this.villagecode);
             json.put(TableVillage.COLUMN_UC_CODE, this.villagecode == null ? JSONObject.NULL : this.villagecode);
+            json.put(TableVillage.COLUMN_TEHSIL_NAME, this.tehsilname == null ? JSONObject.NULL : this.tehsilname);
+            json.put(TableVillage.COLUMN_TEHSIL_CODE, this.tehsilcode == null ? JSONObject.NULL : this.tehsilcode);
             return json;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -91,6 +111,8 @@ public class Villages {
         String seemVID = jsonObject.getString(TableVillage.COLUMN_VILLAGE_CODE);
         this.villagecode = seemVID.substring(seemVID.length() - 3);
         this.uccode = "0" + seemVID.charAt(0);
+        this.tehsilname = jsonObject.getString(TableVillage.COLUMN_TEHSIL_NAME);
+        this.tehsilcode = jsonObject.getString(TableVillage.COLUMN_TEHSIL_CODE);
         return this;
     }
 
@@ -98,12 +120,19 @@ public class Villages {
         this.ucname = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_UCNAME));
         this.villagecode = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_VILLAGE_CODE));
         this.uccode = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_UC_CODE));
+        this.tehsilcode = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_TEHSIL_CODE));
         return this;
     }
 
     public Villages HydrateVil(Cursor cursor) {
         this.villagename = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_VILLAGE_NAME));
         this.villagecode = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_VILLAGE_CODE));
+        return this;
+    }
+
+    public Villages HydrateTeh(Cursor cursor) {
+        this.tehsilname = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_TEHSIL_NAME));
+        this.tehsilcode = cursor.getString(cursor.getColumnIndex(TableVillage.COLUMN_TEHSIL_CODE));
         return this;
     }
 }

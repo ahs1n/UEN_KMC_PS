@@ -638,7 +638,7 @@ public class Households extends BaseObservable implements Observable {
 
     public void setRa17_c2(String ra17_c2) {
         this.ra17_c2 = ra17_c2;
-        setRa18(this.ra17_c2);
+//        setRa18(this.ra17_c2);
         notifyChange(BR.ra17_c2);
     }
 

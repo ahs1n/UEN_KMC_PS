@@ -141,6 +141,64 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- ra0701  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVra0701"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/ra07" />
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_ra07" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/ra0701"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:minHeight="48dp" />
+
+                            <!--    <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/getHouseNo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/button_shape_green"
+                                    android:onClick="getHouseNo"
+                                    android:padding="12dp"
+                                    android:text="Get Household"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="12dp"
+                               />-->
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
 
                 <!--   &lt;!&ndash; ra09  Input   &ndash;&gt;
                    <androidx.cardview.widget.CardView
