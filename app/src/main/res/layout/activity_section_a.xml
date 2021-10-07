@@ -90,7 +90,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- ra04  Input   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVra04"
                     style="@style/cardView"
                     android:visibility="gone">
@@ -128,11 +128,11 @@
                             android:hint="@string/ra04"
                             android:text="@={household.ra04}" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- ra05  Input   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVra05"
                     style="@style/cardView"
                     android:visibility="gone">
@@ -169,7 +169,7 @@
                             android:hint="@string/ra05"
                             android:text="@={household.ra05}" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- ra08  Input   -->
