@@ -193,8 +193,8 @@
     <string name="a17_2">Female</string>
     <string name="title_wra_dialog_remain" translatable="false">Proceed?</string>
     <string name="title_wra_dialog_complete" translatable="false">Add More?</string>
-    <string name="message_wra_dialog_addmore" translatable="false">You have already entered %1$s women between 18 – 49. \n\nWould you like to add more women?</string>
-    <string name="message_wra_dialog_proceeed" translatable="false">You have entered only %1$s of %2$s women between 18 – 49 in the household. \n\nAre you sure you want to close this household?</string>
+    <string name="message_wra_dialog_addmore" translatable="false">You have already entered %1$s married women between 15 – 49. \n\nWould you like to add more women?</string>
+    <string name="message_wra_dialog_proceeed" translatable="false">You have entered only %1$s of %2$s married women between 15 – 49 in the household. \n\nAre you sure you want to close this household?</string>
     <string name="ra16_a">yes</string>
     <string name="ra16_b">no</string>
     <string name="ra17_a1">male</string>

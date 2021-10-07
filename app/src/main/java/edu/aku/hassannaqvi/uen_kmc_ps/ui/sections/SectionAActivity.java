@@ -190,8 +190,9 @@ public class SectionAActivity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (Integer.parseInt(bi.ra18.getText().toString()) > Integer.parseInt(bi.ra17C2.getText().toString()))
+        if (bi.ra2001.isChecked() && Integer.parseInt(bi.ra18.getText().toString()) > Integer.parseInt(bi.ra17C2.getText().toString())) {
             return Validator.emptyCustomTextBox(this, bi.ra18, "RA18 cannot greater than ra17c2", false);
+        }
 
         return true;
     }
