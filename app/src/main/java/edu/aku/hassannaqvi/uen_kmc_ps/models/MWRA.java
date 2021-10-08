@@ -78,7 +78,7 @@ public class MWRA extends BaseObservable implements Observable {
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
-        setAppver(MainApp.appInfo.getAppVersion());
+        setUuid(MainApp.households.getUid());
         setAppver(MainApp.appInfo.getAppVersion());
         setVillageCode(MainApp.selectedVillage);
         setUcCode(MainApp.selectedUC);
