@@ -55,7 +55,7 @@
                     android:textColor="@color/redDark"
                     android:textSize="24sp" />-->
                 <ImageView
-                    android:src="@drawable/uen_kmc"
+                    android:src="@drawable/app_icon"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:layout_gravity="center"

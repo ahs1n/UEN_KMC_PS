@@ -39,8 +39,9 @@ public class DataDownWorkerALL extends Worker {
     private final int position;
     private final String uploadTable;
     private final String uploadWhere;
+    private final String uploadColumns;
     private final URL serverURL = null;
-    private final String nTitle = "Naunehal: Data Download";
+    private final String nTitle = PROJECT_NAME+": Data Download";
     HttpURLConnection urlConnection;
     private ProgressDialog pd;
     private int length;
@@ -52,7 +53,7 @@ public class DataDownWorkerALL extends Worker {
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         Log.d(TAG, "DataDownWorkerALL: position " + position);
-        //uploadColumns = workerParams.getInputData().getString("columns");
+        uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
 
 

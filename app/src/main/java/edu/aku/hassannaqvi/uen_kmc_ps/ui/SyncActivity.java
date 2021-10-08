@@ -182,8 +182,8 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra("login", false);
                 if (sync_flag) {
-
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                    String filter = " colflag is null ";
+                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME, null, filter));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(TableVillage.TABLE_NAME));
                 } else {
@@ -218,7 +218,7 @@ public class SyncActivity extends AppCompatActivity {
                     .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     .putString("select", downloadTables.get(i).getSelect() != null ? downloadTables.get(i).getSelect() : " * ")
-                    .putString("filter", downloadTables.get(i).getFilter() != null ? downloadTables.get(i).getFilter() : " 1=1 ");
+                    .putString("where", downloadTables.get(i).getFilter() != null ? downloadTables.get(i).getFilter() : " 1=1 ");
             /*if (downloadTables.get(i).gettableName().equals(Doctor.TableDoctor.TABLE_NAME)) {
                 data.putString("where", Doctor.TableDoctor.COLUMN_ID_CAMP + "='" + campCode + "'");
             }*/

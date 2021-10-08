@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="190dp"
             android:layout_height="190dp"
-            android:src="@drawable/uen_kmc"
+            android:src="@drawable/app_icon"
             android:layout_gravity="center_horizontal"
             android:layout_margin="12dp"
             android:visibility="visible" />
