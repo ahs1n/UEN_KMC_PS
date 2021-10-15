@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.uen_kmc_ps.core.MainApp;
 import edu.aku.hassannaqvi.uen_kmc_ps.database.DatabaseHelper;
 import edu.aku.hassannaqvi.uen_kmc_ps.databinding.ActivityHouseholdBinding;
 import edu.aku.hassannaqvi.uen_kmc_ps.models.Households;
+import edu.aku.hassannaqvi.uen_kmc_ps.models.MWRA;
 import edu.aku.hassannaqvi.uen_kmc_ps.ui.sections.SectionAActivity;
 
 
@@ -163,6 +164,7 @@ public class HouseholdActivity extends AppCompatActivity {
     }
 
     public void addHousehold() {
+        MainApp.households = new Households();
 
         // Copy common variables from existing Households to new Households
         // MainApp.households = new Households(MainApp.households);
