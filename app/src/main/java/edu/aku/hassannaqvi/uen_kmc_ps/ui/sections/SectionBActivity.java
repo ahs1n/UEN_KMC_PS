@@ -98,6 +98,12 @@ public class SectionBActivity extends AppCompatActivity {
         }
     }
 
+    public void ageInMonths(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.rb04m.getText())) return;
+        bi.rb04y.setText("");
+        bi.rb05.setText("");
+    }
+
     private void setDateRanges() {
         try {
             Calendar cal = Calendar.getInstance();

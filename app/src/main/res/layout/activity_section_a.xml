@@ -215,6 +215,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:hint="@string/ra08"
+                                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                 android:inputType="textPostalAddress|textCapWords"
                                 android:text="@={household.ra08}" />
 
@@ -500,6 +501,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/ra21"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:inputType="textPostalAddress|textCapWords"
 
                             android:text="@={household.ra21}" />
