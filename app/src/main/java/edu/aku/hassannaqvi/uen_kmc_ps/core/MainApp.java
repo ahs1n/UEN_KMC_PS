@@ -3,9 +3,15 @@ package edu.aku.hassannaqvi.uen_kmc_ps.core;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
+
+import net.sqlcipher.database.SQLiteDatabase;
 
 import org.json.JSONArray;
 
@@ -25,17 +31,18 @@ public class MainApp extends Application {
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     //    public static final String _IP = "https://pedres2.aku.edu/";// .LIVE server
-    //public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
-    public static final String _IP = "http://f38158/prosystem";// .TEST server
-    //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
+    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    // public static final String _IP = "http://cls-pae-fp51764";// .TEST server
+
     public static final String _HOST_URL = MainApp._IP + "/uen_kmc_ps/api/";// .TEST server;
-    public static final String _SERVER_URL = "sync.php";
-    public static final String _SERVER_GET_URL = "getData.php";
+    public static final String _SERVER_URL = "syncenc.php";
+    public static final String _SERVER_GET_URL = "getDataenc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/uen_kmc_ps/app/";
 
     public static final Integer MONTHS_LIMIT = 11;
     public static final Integer DAYS_LIMIT = 29;
+    private static final String TAG = "MainApp";
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
     private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
     private static final int TWENTY_MINUTES = 1000 * 60 * 20;
@@ -45,7 +52,7 @@ public class MainApp extends Application {
     private static final long MINUTES_IN_HOUR = 60;
     private static final long HOURS_IN_DAY = 24;
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
-
+    public static String IBAHC = "";
     public static File sdDir;
     public static String[] downloadData;
     public static Households households;
@@ -121,7 +128,11 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+/*        RootBeer rootBeer = new RootBeer(this);
+        if (rootBeer.isRooted()) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }*/
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
@@ -131,7 +142,23 @@ public class MainApp extends Application {
                 .putString("mh01", "")
                 .apply();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-
+        initSecure();
     }
 
+    private void initSecure() {
+        // Initialize SQLCipher library
+        SQLiteDatabase.loadLibs(this);
+
+        // Prepare encryption KEY
+        ApplicationInfo ai = null;
+        try {
+            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            int TRATS = bundle.getInt("YEK_TRATS");
+            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

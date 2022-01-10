@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="false">
         <activity android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.lists.MwraActivity" />
         <activity android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.lists.HouseholdActivity" />
         <activity android:name="edu.aku.hassannaqvi.uen_kmc_ps.ui.lists.FormsReportCluster" />
@@ -54,6 +55,13 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
+
+        <meta-data
+            android:name="YEK_REVRES"
+            android:value="3sA!ttiTuDPr%esENc3WmZq4t7w!z$CnF)J@NcRfUjXn2r5u8x/A?D*G-KaPdSgV" />
+        <meta-data
+            android:name="YEK_TRATS"
+            android:value="3" />
     </application>
 
 </manifest>

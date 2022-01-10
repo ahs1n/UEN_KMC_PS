@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.uen_kmc_ps.database
 
 import edu.aku.hassannaqvi.uen_kmc_ps.contracts.TableContracts.*
+import edu.aku.hassannaqvi.uen_kmc_ps.core.MainApp.IBAHC
 import edu.aku.hassannaqvi.uen_kmc_ps.core.MainApp.PROJECT_NAME
 
 object CreateTable {

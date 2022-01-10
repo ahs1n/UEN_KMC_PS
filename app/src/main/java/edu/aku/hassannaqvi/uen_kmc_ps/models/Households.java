@@ -105,7 +105,6 @@ public class Households extends BaseObservable implements Observable {
 
     public Households(Households households) {
 
-
         setUserName(households.getUserName());
         setDeviceId(households.getDeviceId());
         setAppver(households.getAppver());
@@ -114,7 +113,6 @@ public class Households extends BaseObservable implements Observable {
         setRa08(households.getRa08());
         setRa10(households.getRa10());
         setRound(households.getRound());
-
 
     }
 

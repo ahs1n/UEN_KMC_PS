@@ -285,11 +285,11 @@ public class PhotoUploadWorker2 extends Worker {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Connection", "Keep-Alive");
             connection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
-            connection.setRequestProperty("Content-Type", "multipart/households-data; boundary=" + boundary);
+            connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
             outputStream = new DataOutputStream(connection.getOutputStream());
             outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-            outputStream.writeBytes("Content-Disposition: households-data; name=\"" + filefield + "\"; filename=\"" + q[idx] + "\"" + lineEnd);
+            outputStream.writeBytes("Content-Disposition: form-data; name=\"" + filefield + "\"; filename=\"" + q[idx] + "\"" + lineEnd);
             outputStream.writeBytes("Content-Type: image/jpeg" + lineEnd);
             outputStream.writeBytes("Content-Transfer-Encoding: binary" + lineEnd);
             outputStream.writeBytes(lineEnd);
@@ -316,7 +316,7 @@ public class PhotoUploadWorker2 extends Worker {
             outputStream.writeBytes(lineEnd);
 
             outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-            outputStream.writeBytes("Content-Disposition: households-data; name=\"tagname\"" + lineEnd);
+            outputStream.writeBytes("Content-Disposition: form-data; name=\"tagname\"" + lineEnd);
             outputStream.writeBytes("Content-Type: text/plain" + lineEnd);
             outputStream.writeBytes(lineEnd);
             outputStream.writeBytes(MainApp.appInfo.getTagName() == null ? "" : MainApp.appInfo.getTagName());  // DEVICETAG
